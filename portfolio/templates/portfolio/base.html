@@ -1,0 +1,92 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static "portfolio/custom.css" %}">
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+    <link rel="icon" href="https://img.icons8.com/fluency/48/000000/venn-diagram.png">
+    <title>Portfolio</title>
+  </head>
+  <body>
+   <nav class="navbar navbar-expand-lg navbar-light">
+   <a class="navbar-brand" href="{% url 'home' %}">
+      <img src="https://img.icons8.com/fluency/48/000000/venn-diagram.png" width="30" height="30" class="d-inline-block align-top" alt="">
+      <span>Kartik Nema</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'about_me' %}">About Me</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="{% static 'portfolio/resume.pdf' %}" target="_blank">Resume</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://www.linkedin.com/in/kartik-nema-187176173/" target="_blank">LinkedIn</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/Kartik2301" target="_blank">Github</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="mailto:knem7554@gmail.com" target="_blank">Gmail</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Facebook</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link btn btn-primary" href="{% url 'blog:all_blogs' %}">Blogs</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  {% block content %}
+  {% endblock %}
+
+  <br><br><br>
+  <footer id="footer">
+    <h5>Leave a Message</h5>
+    <br>
+    <div class="container">
+      <form id="contactForm"  method="POST">
+        {% csrf_token %}
+        <div class="row">
+          <div class="col">
+            <input type="text" name="name" class="form-control" placeholder="Name">
+          </div>
+          <div class="col">
+            <input type="email" name="email" class="form-control" placeholder="Email">
+          </div>
+          <br><br><br>
+          <div class="container" align="center">
+            <textarea name="message" rows="4" cols="80" class="form-control" placeholder="Message"></textarea>
+            <br>
+            <input class="btn btn-md btn-success" type='submit'>
+          </div>
+        </div>
+      </form>
+    </div>
+  </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="{% static 'portfolio/custom.js' %}"></script>
+  </body>
+</html>

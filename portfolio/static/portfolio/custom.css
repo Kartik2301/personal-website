@@ -1,0 +1,35 @@
+.navbar-nav .nav-link {
+    color: rgba(0,0,0,1) !important;
+}
+
+.navbar-nav .nav-link:hover {
+    color: rgba(0,0,0,.5) !important;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+#blogtitle {
+    font-size: 6rem;
+}
+
+@media (min-width: 992px) {
+    #hometext {
+        font-size: 4rem;
+    }
+    #blogdetailtitle {
+        font-size: 5rem;
+    }
+}
+
+#footer {
+  margin-top: auto;
+  background: #e5e9e8;
+  padding-top: 2.5%;
+  padding-bottom: 3%;
+  text-align: center;
+}
