@@ -2,7 +2,6 @@ from django.shortcuts import render, HttpResponse
 from .models import Project
 import smtplib
 from datetime import datetime
-from dateutil import relativedelta
 
 # Create your views here.
 
@@ -13,10 +12,7 @@ def home(request):
 
 
 def about_me(request):
-    current_date = datetime.now()
-    date = datetime(2000, 1, 23)
-    diff = relativedelta.relativedelta(current_date, date)
-    age = diff.years
+    age = 21
     return render(request, 'portfolio/about_me.html', {'age': age})
 
 
